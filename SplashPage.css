@@ -1,0 +1,182 @@
+.intro {                            /* The outermost box, covers most of our webpage, allows us to center the interal box and have a grey background for "dark mode". Has a blank border at the edges with this config but I like the border effect this creates. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #000000;
+}
+
+.internal {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    min-width: 465px;             /* set minimum values to avoid text getting cut off. We might want to look at options for smaller displays as you could potentially have smaller but I think sub-450px support is pushing it a bit */
+    min-height: 130px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;       /* keeping the content top-to-bottom */
+    justify-content: center;        
+    align-items: left;            /* keeping everything aligned left avoids the text moving around due to the typing effect. */
+    height: 20vh;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Typing effect components below */
+.css-typing p {
+    border-right: .15em solid orange;
+    font-family: "Courier";
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+  }
+  .css-typing p:nth-child(1) {  /* setting the "nth-child" element to apply to the respective(n) <p> iteration for scalability */
+    width: 31em;                                    /* length of space the typing cursor, and text uses. If this is smaller than the length of text typed, text will be hidden. */
+    -webkit-animation: type 2s steps(40, end);    /* linking to specific animation type below */
+    animation: type 2s steps(55, end);          /* the "steps" should match the character count for whatever you're typing, this means the characters appear one at a time */
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;  
+    text-align: left;
+  }
+  
+  .css-typing p:nth-child(2) {
+    width: 20em;
+    opacity: 0;
+    -webkit-animation: type2 2s steps(40, end);
+    animation: type2 2s steps(35, end);
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    text-align: left;
+  }
+  
+  .css-typing p:nth-child(3) {            
+    width: 10.3em; /* about as close as we can get to the cursor stopping in a normal spot for typing */
+    opacity: 0;
+    -webkit-animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
+    animation: type3 5s steps(18, end), blink .5s step-end infinite alternate;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    text-align: left;
+  }
+  
+  /* setting up alternate types of blinking to be used with varying speeds */
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      border: none;
+    }
+  }
+  
+  @-webkit-keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      border: none;
+    }
+  }
+  
+  @keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+  
+  @-webkit-keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+  
+  @keyframes type3 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes type3 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  @-webkit-keyframes blink {
+    50% {
+      border-color: tranparent;
+    }
+  }
